@@ -104,8 +104,12 @@
 
                                 <div class="form-group">
                                     <label for="nacionalidade"> Nacionalidade </label>
-                                    <input type="text" class="form-control" id="nacionalidade" name="nacionalidade" placeholder="Ex: Brasileiro" required>
-                                    <small id="nacionalidade-ajuda" class="form-text text-muted"> Ex.: Brasileiro </small>
+                                    <!-- <input type="text" class="form-control" id="nacionalidade" name="nacionalidade" placeholder="Ex: Brasileiro" required> -->
+                                    <select class="form-control" name="nacionalidade" required>
+                                        <option value="Brasileiro"> Brasileiro </option>
+                                        <option value="Estrangeiro"> Estrangeiro </option>
+                                    </select>
+                                    <small id="nacionalidade-ajuda" class="form-text text-muted"> Selecione uma opção </small>
                                 </div>
 
                                 <div class="form-group">

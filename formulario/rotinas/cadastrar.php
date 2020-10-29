@@ -11,7 +11,7 @@
     $emailc = $_POST['emailc'];
 
     if ( empty($cpf) || empty($nome) || empty($nascimento) || empty($nacionalidade) || empty($celular) || empty($email) || Empty($emailc)) {
-        echo "<script> alert('Preencha todos os campos!'); window.location='../cadastrar.php'; </script>";
+        echo "<script> alert('Preencha todos os campos!'); window.history.back(); </script>";
     }
         else if ( $email != $emailc ) {
             echo "<script> alert('Os e-mail inseridos são diferentes! Confirme novamente os e-mails!'); window.history.back(); </script>";

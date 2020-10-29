@@ -1,5 +1,7 @@
 CREATE DATABASE bd_quartaloca;
 
+USE bd_quartaloca
+
 CREATE TABLE tb_clientes 
 (
     id INTEGER AUTO_INCREMENT,
@@ -22,7 +24,7 @@ CREATE TABLE tb_cadastros
     PRIMARY KEY(cpf)
 );
 
-DROP TABLE xxxxxxxxxxxxxxx     - apaga a tabela
+DROP TABLE xxxxxxxxxxxxxxx  - apaga a tabela
 
 CREATE TABLE tb_cadastros
 (
@@ -35,4 +37,12 @@ CREATE TABLE tb_cadastros
     email VARCHAR(30) NOT NULL,
     
     PRIMARY KEY(cpf)
+);
+
+CREATE TABLE tb_usuarios
+(
+    email VARCHAR(50) NOT NULL,
+    senha VARCHAR(8) NOT NULL,
+
+    PRIMARY KEY(email)
 );

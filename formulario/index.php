@@ -29,25 +29,25 @@
                                 Login
                             </a>
                             <div class="dropdown-menu">
-                                <form class="px-4 py-3">
+                                <form action ="rotinas/login.php" method="POST" class="px-4 py-3">
                                     <div class="form-group">
-                                        <label for="exampleDropdownFormEmail1">Email</label>
-                                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@exemplo.com">
+                                        <label for="user">Email</label>
+                                        <input type="email" class="form-control" id="user" placeholder="email@exemplo.com">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleDropdownFormPassword1">Senha</label>
-                                        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Senha">
+                                        <label for="password">Senha</label>
+                                        <input type="password" class="form-control" id="password" placeholder="Senha">
                                     </div>
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                        <label class="form-check-label" for="dropdownCheck">
+                                        <label class="form-check-label" for="lembrar">
                                             Lembrar-me
                                         </label>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Entrar</button>
                                 </form>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Novo por aqui? Regitre-se.</a>
+                                <a class="dropdown-item" href="cadastro_usuario.php">Novo por aqui? Regitre-se.</a>
                                 <a class="dropdown-item" href="#">Esqueceu a senha?</a>
                             </div>
                         </div>
@@ -91,10 +91,10 @@
                         </div>
 
                         <div class="col-12 col-md-3 mb-5">
-                            <a class="text-white" href="">
+                            <a class="text-white" href="cadastro_usuario.php">
                                 <div class="bg-primary p-5 rounded">
-                                    <img src="_img/alterar.png" alt="Alterar Dados de Clientes">
-                                    <p> Usuários </p>
+                                    <img src="_img/alterar.png" alt="Cadastrar Usuários">
+                                    <p> Criar Login </p>
                                 </div>
                             </a>
                         </div>
