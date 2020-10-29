@@ -1,9 +1,9 @@
 <?php
-    require_once "rotinas/conexao.php";
+    require_once 'rotinas/conexao.php';
     $nome = $_POST['nome'];
     $cpf = $_POST['cpf'];
     
-    if ($nome != NULL || $nome == ''){
+    if ($nome != NULL || $nome != ""){
         $pesquisa = $nome;
         $mostrarCadastro = conectarAoBanco()->prepare("SELECT * FROM tb_cadastros WHERE nome = '$pesquisa'");
         $mostrarCadastro->execute();
@@ -12,10 +12,11 @@
             $pesquisa = NULL;
         }
     }
-    elseif ($cpf != NULL || $cpf == ''){
+    elseif ($cpf != NULL || $cpf != ""){
         $pesquisa = $cpf;
         $mostrarCadastro = conectarAoBanco()->prepare("SELECT * FROM tb_cadastros WHERE cpf = '$pesquisa'");
         $mostrarCadastro->execute();
+        $contarMostrarCadastro = $mostrarCadastro->rowCount();
         if ($contarMostrarCadastro == 0){
             $pesquisa = NULL;
         }
