@@ -1,4 +1,10 @@
 <?php
+    session_start();
+
+    if ((! isset($_SESSION['logado'])) || ($_SESSION['logado'] != TRUE)) {
+        echo "<script> alert('Vocẽ precisa fazer login para acessar esta página!'); window.location='index.php'; </script>";
+    }
+    else{
     require_once 'rotinas/conexao.php';
 
     $id = $_GET['cpfCliente'];
@@ -37,29 +43,13 @@
                         </ul>
                         <div class="nav-item dropleft">
                             <a class="nav-link dropdown-toggle bg-light btn text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Login
+                                Logado
                             </a>
+                            
                             <div class="dropdown-menu">
-                                <form class="px-4 py-3">
-                                    <div class="form-group">
-                                        <label for="exampleDropdownFormEmail1">Email</label>
-                                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@exemplo.com">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleDropdownFormPassword1">Senha</label>
-                                        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Senha">
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                        <label class="form-check-label" for="dropdownCheck">
-                                            Lembrar-me
-                                        </label>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Entrar</button>
-                                </form>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Novo, por aqui? Regitre-se.</a>
-                                <a class="dropdown-item" href="#">Esqueceu a senha?</a>
+                                <a href="rotinas/sair.php">
+                                    <button class="btn btn-primary ml-5">Sair</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -111,8 +101,12 @@
 
                                 <div class="form-group">
                                     <label for="nacionalidade"> Nacionalidade </label>
-                                    <input type="text" class="form-control" id="nacionalidade" name="nacionalidade" value="<?php echo $resultado->nacionalidade; ?>" placeholder="Ex: Brasileiro" required>
-                                    <small id="nacionalidade-ajuda" class="form-text text-muted"> Ex.: Brasileiro </small>
+                                    <!-- <input type="text" class="form-control" id="nacionalidade" name="nacionalidade" placeholder="Ex: Brasileiro" required> -->
+                                    <select class="form-control" name="nacionalidade" required>
+                                        <option value="Brasileiro"> Brasileira </option>
+                                        <option value="Estrangeiro"> Estrangeira </option>
+                                    </select>
+                                    <small id="nacionalidade-ajuda" class="form-text text-muted"> Selecione uma opção </small>
                                 </div>
 
                                 <div class="form-group">
@@ -152,3 +146,6 @@
     </body>
 
 </html>
+<?php
+    }
+?>

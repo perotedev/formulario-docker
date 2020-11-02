@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    
+    if ((isset($_SESSION['logado'])) || ($_SESSION['logado'] == TRUE)) {
+        echo "<script> alert('Não é possivel cadastrar um novo usuário se você estiver logado!'); window.location='index.php'; </script>";
+    }
+    else{
+?>  
 <!DOCTYPE html>
 
 <html>
@@ -32,25 +40,26 @@
                                 Login
                             </a>
                             <div class="dropdown-menu">
-                                <form class="px-4 py-3">
+                                <form action ="rotinas/login.php" method="POST" class="px-4 py-3">
+                                    
                                     <div class="form-group">
-                                        <label for="exampleDropdownFormEmail1">Email</label>
-                                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@exemplo.com">
+                                        <label for="user">Email</label>
+                                        <input type="email" class="form-control" id="user" name="user" placeholder="email@exemplo.com">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleDropdownFormPassword1">Senha</label>
-                                        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Senha">
+                                        <label for="password">Senha</label>
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Senha">
                                     </div>
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                        <label class="form-check-label" for="dropdownCheck">
+                                        <label class="form-check-label" for="lembrar">
                                             Lembrar-me
                                         </label>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Entrar</button>
                                 </form>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Novo, por aqui? Regitre-se.</a>
+                                <a class="dropdown-item" href="cadastro_usuario.php">Novo por aqui? Regitre-se.</a>
                                 <a class="dropdown-item" href="#">Esqueceu a senha?</a>
                             </div>
                         </div>
@@ -106,3 +115,6 @@
     </body>
 
 </html>
+<?php
+    }
+?>

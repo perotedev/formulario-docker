@@ -1,3 +1,7 @@
+<?php
+    session_start();    
+?>
+
 <!DOCTYPE html>
 
 <html lang="pt-BR">
@@ -24,19 +28,23 @@
                                 <a class="nav-link" href="#"> Sobre Nós </a>
                             </li>
                         </ul>
+                        <?php                        
+                            if ((! isset($_SESSION['logado'])) || ($_SESSION['logado'] != TRUE)) {
+                        ?>
                         <div class="nav-item dropleft">
                             <a class="nav-link dropdown-toggle bg-light btn text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Login
                             </a>
                             <div class="dropdown-menu">
                                 <form action ="rotinas/login.php" method="POST" class="px-4 py-3">
+                                    
                                     <div class="form-group">
                                         <label for="user">Email</label>
-                                        <input type="email" class="form-control" id="user" placeholder="email@exemplo.com">
+                                        <input type="email" class="form-control" id="user" name='user' placeholder="email@exemplo.com">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Senha</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Senha">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Senha">
                                     </div>
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" id="dropdownCheck">
@@ -51,6 +59,24 @@
                                 <a class="dropdown-item" href="#">Esqueceu a senha?</a>
                             </div>
                         </div>
+                        <?php        
+                            }
+                            else{
+                        ?>
+                        <div class="nav-item dropleft">
+                            <a class="nav-link dropdown-toggle bg-light btn text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Logado
+                            </a>
+                            
+                            <div class="dropdown-menu">
+                                <a href="rotinas/sair.php">
+                                    <button class="btn btn-primary ml-5">Sair</button>
+                                </a>
+                            </div>
+                        </div>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </nav>
@@ -59,7 +85,7 @@
         <main>
             <section id="opcoes">
                 <div class="container">
-                    <h1 class="display-4 text-center my-5"> Página Inicial </h1>
+                    <h1 class="display-4 text-center my-5"> Projeto Sistema de Cadastros </h1>
 
                     <div class="row text-center pt-5">
 
@@ -67,7 +93,7 @@
                             <a class="text-white" href="cadastrar.php">
                                 <div class="bg-primary p-5 rounded">
                                     <img src="_img/cadastrar.png" alt="Cadastrar Cliente">
-                                    <p> Cadastrar </p>
+                                    <p> Cadastrar Cliente</p>
                                 </div>
                             </a>
                         </div>
@@ -76,7 +102,7 @@
                             <a class="text-white" href="listar.php">
                                 <div class="bg-primary p-5 rounded">
                                     <img src="_img/listar.png" alt="Listar Clientes">
-                                    <p> Listar </p>
+                                    <p> Listar Clientes </p>
                                 </div>
                             </a>
                         </div>
@@ -85,7 +111,7 @@
                             <a class="text-white" href="pesquisar.php">
                                 <div class="bg-primary p-5 rounded">
                                     <img src="_img/pesquisar.png" alt="Pesquisar Clientes">
-                                    <p> Pesquisar </p>
+                                    <p> Pesquisar Cliente</p>
                                 </div>
                             </a>
                         </div>
