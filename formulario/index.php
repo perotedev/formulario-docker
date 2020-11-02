@@ -19,7 +19,10 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div class="container">
-                    <div class="collapse navbar-collapse">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
                                 <a class="nav-link" href="index.php"> Cadastros online totalmente digitais! <span class="sr-only">(current)</span></a>
@@ -31,7 +34,7 @@
                         <?php                        
                             if ((! isset($_SESSION['logado'])) || ($_SESSION['logado'] != TRUE)) {
                         ?>
-                        <div class="nav-item dropleft">
+                        <div class="nav-item dropdown pl-5">
                             <a class="nav-link dropdown-toggle bg-light btn text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Login
                             </a>
@@ -63,7 +66,7 @@
                             }
                             else{
                         ?>
-                        <div class="nav-item dropleft">
+                        <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle bg-light btn text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Logado
                             </a>
@@ -118,7 +121,7 @@
 
                         <div class="col-12 col-md-3 mb-5">
                             <a class="text-white" href="cadastro_usuario.php">
-                                <div class="bg-primary p-5 rounded">
+                                <div class="bg-dark p-5 rounded">
                                     <img src="_img/alterar.png" alt="Cadastrar Usuários">
                                     <p> Criar Login </p>
                                 </div>
