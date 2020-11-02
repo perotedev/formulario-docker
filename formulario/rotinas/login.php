@@ -9,7 +9,7 @@
     $contarLogin = $listarLogin->rowCount();
 
     if ($contarLogin < 1) {
-        echo "<script> alert('Usuário não cadastrado!'); window.history.back(); </script>";
+        echo "<script> alert('Usuário não cadastrado!'); window.location='../index.php'; </script>";
     }
  
     else{        
@@ -22,12 +22,12 @@
                     break;
                 }
                 else{
-                    echo "<script> alert('Senha incorreta!'); window.history.back(); </script>";
+                    echo "<script> alert('Senha incorreta!'); window.location='../index.php'; </script>";
                 }
                 break;
             }
         }
-       echo "<script> alert('Erro ao fazer login!'); window.history.back(); </script>";
+       echo "<script> alert('Erro ao fazer login!'); window.location='../index.php'; </script>";
     }
 ?>
 <!--
