@@ -1,5 +1,11 @@
 <?php
     require_once 'conexao.php';
+    require_once 'confere.php';
+    $check1 = confere1();
+    $check1->execute();
+    $check2 = confere2();
+    $check2->execute();
+
     $usuario = $_POST['email'];
     $senha = $_POST['password'];
     
