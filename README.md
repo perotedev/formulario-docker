@@ -5,11 +5,9 @@ Projetinho com PHP, JavaScript, Bootstrap, Jquery, HTML5, CSS MySQL
 # Sobre o Banco de Dados
 1 - Ao executar o docker-compose, crie uma pasta chamada 'mysql' na raiz do repositório! Ela será responsável por armazenar o seu banco de dados! Sempre que encerrar o docker-compose, apague os dados desta pasta, pois se for rodar novamente a imagem dará erro porque haverá arquivos de cache dentro dela.
 
-2 - O arquivo docker-compose não cria database e tables automaticamente, então crie manualmente, de acordo com as 2 últimas tabelas no arquivo sql na raiz do repositório. Verifique também o nome do banco de dados referido no arquivo 'conexao.php' na pasta rotinas, para criar um database equivalente.
+2 - A criação de tabelas é automatica! Você ainda pode usar o MySQL Workbench, PHP MyAdmin, Postgres ou um de sua preferência, para manipular manualmente o banco de dados caso seja necessário.
 
-3 - Como o docker-compose ainda não foi atualizado para criar os bancos, use o MySQL Workbench, PHP MyAdmin, Postgres ou um de sua preferência, para manipular o banco de dados.
-
-4 - Ao executar o docker-compose, inspecione o network da sua imagem para obter os ips do banco de dados e do localhost.
+3 - Ao executar o docker-compose, inspecione o network da sua imagem MySQL para obter o IP do banco de dados, então coloque-o no arquivo 'conexão.php' na função 'conectarAoBanco()' para que a aplicação possa ter acesso. A porta é a padrão 3306.
 
 # Sobre o Docker-Compose
-1 - O docker-compose ainda não cria automaticamente todas as tabelas para utilizar no MySQL, porém esta atualização será feita no futuro. No momento algumas funcionalidades ainda estão sendo implementadas.
+1 - O docker-compose cria um container com uma imagem PHP personalizada e utiliza mais 2 imagens padrão (Mysql e PHPmyAdmin). A imagem PHP é alterada para que sejam instalados os plugins do Apache, Mysqli e PDO.
