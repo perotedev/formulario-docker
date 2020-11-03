@@ -10,14 +10,27 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
+      - MYSQL_USER=root
       - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=bd_quartaloca
 
   php:  
     build: .
     ports:
-      - "8080:8080"
-        
+      - "8080:80"        
     volumes:
       - ./formulario:/var/www/html
+    links:
+      - db
+  
+  dbadmin:
+    image: phpmyadmin:latest
+    restart: always
+    ports:
+      - "9090:80"
+    environment:
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
     links:
       - db
