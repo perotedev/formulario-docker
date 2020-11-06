@@ -59,7 +59,7 @@
                                 </form>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="cadastro_usuario.php">Novo por aqui? Regitre-se.</a>
-                                <a class="dropdown-item" href="#">Esqueceu a senha?</a>
+                                <a class="dropdown-item" href="esqueceu.php">Esqueceu a senha?</a>
                             </div>
                         </div>
                         <?php        
